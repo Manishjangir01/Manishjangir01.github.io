@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Manish Jangir, Data Engineer Intern</title>
+<meta name="description" content="Portfolio of Manish Jangir, a BCA (AI &amp; ML) graduate looking for a Data Engineer internship. ETL, PySpark, SQL and web scraping pipelines, all with tests.">
+<meta name="theme-color" content="#0e1a22">
+<meta property="og:title" content="Manish Jangir, Data Engineer Intern">
+<meta property="og:description" content="Data pipelines in Python, PySpark and SQL that keep the rows they reject. Projects, code and resume.">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  // Apply the saved theme before the page paints, so it does not flash.
+  try {
+    var t = localStorage.getItem("theme");
+    if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+  } catch (e) {}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a href="#projects">Projects</a>
+      <a href="#repositories">Repositories</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme" type="button" id="theme-toggle" aria-label="Switch colour theme">Theme</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="name">
+  <div class="wrap">
+    <h1 id="name">Manish Jangir</h1>
+    <p class="lede">Data engineer intern. I build pipelines that keep the rows they reject.</p>
+    <p class="facts">BCA in AI &amp; ML, Parishkar College of Global Excellence, Jaipur (2026, CGPA 8.1). I work in Python, SQL and Apache Spark, and every project here has tests.</p>
+    <ul class="actions">
+      <li><a class="primary" href="assets/Manish_Jangir_Resume.pdf">Download resume (PDF)</a></li>
+      <li><a href="https://github.com/Manishjangir01">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/manish-jangir-0401652b9/">LinkedIn</a></li>
+      <li><a href="mailto:mannujangir7360@gmail.com">Email</a></li>
+    </ul>
+
+    <section class="run" aria-labelledby="run-title">
+      <h2 id="run-title">One pipeline run</h2>
+      <p class="src">From <a href="https://github.com/Manishjangir01/big-data-analytics-pipeline">big-data-analytics-pipeline</a>, on a synthetic ride dataset.</p>
+      <dl>
+        <dt>Rows read</dt><dd>202,000</dd>
+        <dt>Duplicates removed</dt><dd class="minus">&minus;2,000</dd>
+        <dt>Rejected, each saved with a reason</dt><dd class="rej">&minus;10,631</dd>
+        <dt class="total">Clean rows written</dt><dd class="total">189,369</dd>
+      </dl>
+      <div class="bar" role="img" aria-label="Of 202,000 rows: 93.7 percent clean, 5.3 percent rejected, 1.0 percent duplicates">
+        <span class="clean" style="--w:93.75"></span>
+        <span class="rejected" style="--w:5.26"></span>
+        <span class="dup" style="--w:0.99"></span>
+      </div>
+      <p class="note">A second, separate pandas version of the cleaning rules gives the same counts. The tests fail if the two ever disagree.</p>
+    </section>
+  </div>
+</section>
+
+<section class="section" id="projects" aria-labelledby="projects-h">
+  <div class="wrap">
+    <h2 id="projects-h">Projects</h2>
+    <div>
+      <p class="intro">Five projects. The data in all of them is synthetic or from practice sites, so none of the numbers describe a real company.</p>
+
+      <article class="project">
+        <h3>Sales ETL Pipeline</h3>
+        <p class="what">Cleans a messy sales CSV and loads a SQLite warehouse. Rejected rows go to an audit table instead of disappearing.</p>
+        <p class="stat">1,020 rows in, 951 loaded, 20 duplicates removed, 49 rejected</p>
+        <p class="tech">Python, pandas, SQL, SQLite, pytest, GitHub Actions</p>
+        <details>
+          <summary>What is inside</summary>
+          <ul>
+            <li>Fact table, rejected-rows audit table and indexes.</li>
+            <li>Rejects a row for a missing city, a bad date or a quantity of 0 or less. City names are normalised.</li>
+            <li>SQL for monthly revenue, top cities, best-selling products and top customers, with Matplotlib charts.</li>
+            <li>5 pytest tests, logging, a command line interface and a workflow that runs the tests on every push.</li>
+          </ul>
+        </details>
+        <p class="links"><a href="https://github.com/Manishjangir01/sales-etl-pipeline">Code on GitHub</a></p>
+      </article>
+
+      <article class="project">
+        <h3>Customer Churn Prediction</h3>
+        <p class="what">A scikit-learn pipeline that compares logistic regression with a random forest on a synthetic customer dataset.</p>
+        <p class="stat">ROC-AUC 0.79 on holdout, 0.80 &plusmn; 0.02 in 5-fold cross-validation</p>
+        <p class="tech">Python, scikit-learn, pandas, Matplotlib, pytest, GitHub Actions</p>
+        <details>
+          <summary>What is inside</summary>
+          <ul>
+            <li>1,200 rows. Scaling and one-hot encoding sit inside the pipeline, so training and prediction use the same steps.</li>
+            <li>The two models scored close together, and the README says the choice is only weakly supported.</li>
+            <li>ROC curve, confusion matrix and permutation feature-importance charts.</li>
+            <li>9 pytest tests that run in GitHub Actions.</li>
+          </ul>
+        </details>
+        <p class="links"><a href="https://github.com/Manishjangir01/ml-intern-portfolio">Code on GitHub</a></p>
+      </article>
+
+      <article class="project">
+        <h3>Student Management SQL Project</h3>
+        <p class="what">Relational design and analysis in MySQL for students, courses and enrollments.</p>
+        <p class="tech">SQL, MySQL</p>
+        <details>
+          <summary>What is inside</summary>
+          <ul>
+            <li>Schemas with primary keys, foreign keys and CHECK constraints, and a script that rebuilds the sample data.</li>
+            <li>Queries with JOIN, GROUP BY and aggregates: average score per subject and gender, top performer, average grade per course, failed-student counts.</li>
+          </ul>
+        </details>
+        <p class="links"><a href="https://github.com/Manishjangir01/Student-Management-SQL-Project">Code on GitHub</a></p>
+      </article>
+
+      <article class="project">
+        <h3>Big Data Analytics Pipeline</h3>
+        <p class="what">A PySpark job that cleans and validates ride records, writes partitioned Parquet, answers questions with Spark SQL and loads PostgreSQL.</p>
+        <p class="stat">202,000 rows read, 189,369 clean, 10,631 rejected</p>
+        <p class="tech">Python, PySpark, Apache Spark, SQL, PostgreSQL, Docker Compose</p>
+        <p class="ai">Built with guidance from an AI mentor.</p>
+        <details>
+          <summary>What is inside</summary>
+          <ul>
+            <li>Reads every column as text first, so bad values are not changed silently.</li>
+            <li>8 validation rules. Rejected rows keep their raw values and a reason.</li>
+            <li>Spark SQL queries: daily revenue, busiest hours, top pickup zones, payment mix, best zone per day.</li>
+            <li>Tests compare the Spark output with the independent pandas version. GitHub Actions runs them with real Spark and a PostgreSQL service.</li>
+          </ul>
+        </details>
+        <p class="links"><a href="https://github.com/Manishjangir01/big-data-analytics-pipeline">Code on GitHub</a></p>
+      </article>
+
+      <article class="project">
+        <h3>Automated Web Scraping Pipeline</h3>
+        <p class="what">Scrapes book listings from a practice site, validates them and stores them in SQLite without creating duplicates.</p>
+        <p class="stat">Second run on the same data adds 0 new rows</p>
+        <p class="tech">Python, requests, BeautifulSoup, SQL, SQLite, pytest, GitHub Actions</p>
+        <p class="ai">Built with guidance from an AI mentor.</p>
+        <details>
+          <summary>What is inside</summary>
+          <ul>
+            <li>Reads robots.txt, waits between requests, and retries timeouts and 429/5xx errors with backoff.</li>
+            <li>Saves the raw data first, then applies 5 validation rules. Rejected records keep a reason.</li>
+            <li>Stores a price-history row only when a price changes. Every run is marked ok, partial, failed or empty.</li>
+            <li>44 tests run against a local copy of the site's page markup. A weekly workflow runs the real scraper.</li>
+          </ul>
+        </details>
+        <p class="links"><a href="https://github.com/Manishjangir01/web-scraping-data-pipeline">Code on GitHub</a></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="repositories" aria-labelledby="repos-h">
+  <div class="wrap">
+    <h2 id="repos-h">All repositories</h2>
+    <div>
+      <p class="intro">Every public repository on my GitHub account.</p>
+      <ul class="repos" id="repo-list">
+        <li data-repo="big-data-analytics-pipeline"><a href="https://github.com/Manishjangir01/big-data-analytics-pipeline">big-data-analytics-pipeline</a><p class="desc">PySpark pipeline with validation rules, partitioned Parquet, Spark SQL and PostgreSQL.</p><p class="meta"></p></li>
+        <li data-repo="web-scraping-data-pipeline"><a href="https://github.com/Manishjangir01/web-scraping-data-pipeline">web-scraping-data-pipeline</a><p class="desc">Scrape, clean, store and analyse book listings with SQLite and SQL.</p><p class="meta"></p></li>
+        <li data-repo="sales-etl-pipeline"><a href="https://github.com/Manishjangir01/sales-etl-pipeline">sales-etl-pipeline</a><p class="desc">ETL pipeline from a messy sales CSV to a SQLite warehouse, with tests and CI.</p><p class="meta"></p></li>
+        <li data-repo="ml-intern-portfolio"><a href="https://github.com/Manishjangir01/ml-intern-portfolio">ml-intern-portfolio</a><p class="desc">Customer churn classification with scikit-learn, charts and tests.</p><p class="meta"></p></li>
+        <li data-repo="Student-Management-SQL-Project"><a href="https://github.com/Manishjangir01/Student-Management-SQL-Project">Student-Management-SQL-Project</a><p class="desc">MySQL schema and analysis queries for students, courses and enrollments.</p><p class="meta"></p></li>
+        <li data-repo="SQL-Data-Analysis-Task-2"><a href="https://github.com/Manishjangir01/SQL-Data-Analysis-Task-2">SQL-Data-Analysis-Task-2</a><p class="desc">SQL data analysis, internship task 2.</p><p class="meta"></p></li>
+        <li data-repo="SQL-Data-Analysis-Internship-Task-3"><a href="https://github.com/Manishjangir01/SQL-Data-Analysis-Internship-Task-3">SQL-Data-Analysis-Internship-Task-3</a><p class="desc">SQL data analysis, internship task 3, with the script and its output.</p><p class="meta"></p></li>
+        <li data-repo="Data-EDA-and-Visualization"><a href="https://github.com/Manishjangir01/Data-EDA-and-Visualization">Data-EDA-and-Visualization</a><p class="desc">Exploratory data analysis and charts.</p><p class="meta"></p></li>
+        <li data-repo="Pandas-Library-for-Data-Science"><a href="https://github.com/Manishjangir01/Pandas-Library-for-Data-Science">Pandas-Library-for-Data-Science</a><p class="desc">Notes and examples for the pandas library.</p><p class="meta"></p></li>
+        <li data-repo="NumPy-Basics-for-Data-Science"><a href="https://github.com/Manishjangir01/NumPy-Basics-for-Data-Science">NumPy-Basics-for-Data-Science</a><p class="desc">NumPy basics in a notebook.</p><p class="meta"></p></li>
+      </ul>
+      <p class="status" id="repo-status" role="status"></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="skills" aria-labelledby="skills-h">
+  <div class="wrap">
+    <h2 id="skills-h">Skills</h2>
+    <dl class="skills">
+      <dt>Used in the projects</dt>
+      <dd>Python, SQL, pandas, NumPy, Apache Spark (PySpark, Spark SQL), SQLite, MySQL, PostgreSQL</dd>
+      <dt>Data work</dt>
+      <dd>ETL pipelines, data cleaning and validation, data modelling, SQL analytics, exploratory analysis and visualisation</dd>
+      <dt>Engineering habits</dt>
+      <dd>pytest, GitHub Actions, Git and GitHub, Docker Compose, notebooks</dd>
+      <dt>Machine learning</dt>
+      <dd>scikit-learn, classification, cross-validation, model evaluation</dd>
+      <dt>Learning next</dt>
+      <dd>Apache Airflow, Apache Kafka, Hadoop</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="section" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <h2 id="contact-h">Contact</h2>
+    <div>
+      <p class="intro">I am looking for a Data Engineer internship. If your team is hiring interns, or you know who is, please write to me.</p>
+      <ul class="contact-list">
+        <li><b>Email</b> <a href="mailto:mannujangir7360@gmail.com">mannujangir7360@gmail.com</a></li>
+        <li><b>LinkedIn</b> <a href="https://www.linkedin.com/in/manish-jangir-0401652b9/">manish-jangir-0401652b9</a></li>
+        <li><b>GitHub</b> <a href="https://github.com/Manishjangir01">Manishjangir01</a></li>
+        <li><b>Resume</b> <a href="assets/Manish_Jangir_Resume.pdf">One page, PDF</a></li>
+        <li><b>Location</b> Rajasthan, India</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>&copy; 2026 Manish Jangir. Code is under the MIT licence.</p>
+    <p>Repository details load from the GitHub API. If that is unavailable, the list above still shows.</p>
+  </div>
+</footer>
+
+<script src="assets/app.js" defer></script>
+</body>
+</html>
