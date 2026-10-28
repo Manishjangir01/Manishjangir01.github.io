@@ -3,7 +3,7 @@
 [![site checks](https://github.com/Manishjangir01/Manishjangir01.github.io/actions/workflows/check.yml/badge.svg)](https://github.com/Manishjangir01/Manishjangir01.github.io/actions/workflows/check.yml)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
-The source of my portfolio site: five data projects, all my GitHub repositories, skills, resume and contact details on one page. Plain HTML, CSS and a little JavaScript. No build step, no framework, no tracking.
+The source of my portfolio site: six data projects, all my GitHub repositories, skills, resume and contact details on one page. Plain HTML, CSS and a little JavaScript. No build step, no framework, no tracking.
 
 Live site: https://manishjangir01.github.io
 
@@ -13,7 +13,7 @@ Live site: https://manishjangir01.github.io
 |---------|---------------|
 | Top | Name, one-line pitch, resume download, links |
 | One pipeline run | Real counts from my PySpark project (202,000 rows read, 2,000 duplicates, 10,631 rejected, 189,369 clean) as a table and a bar |
-| Projects | Five projects with the key number, tech, what is inside and a link to the code |
+| Projects | Six projects with the key number, tech, what is inside and a link to the code |
 | All repositories | Every public repo. The list is in the HTML, and JavaScript adds language and last-updated date from the GitHub API |
 | Skills, Contact | Grouped skills (what the projects used, and what I am still learning) and ways to reach me |
 
@@ -23,7 +23,7 @@ Live site: https://manishjangir01.github.io
 - **If the GitHub API is down or rate limited**, the saved list stays and a short note says so. Answers are cached in the browser for 30 minutes to stay under the API limit for visitors who are not signed in.
 - **Dark theme by default**, with a light theme switch. The switch remembers the choice.
 - **Accessible by default:** skip link, visible keyboard focus, text contrast checked for both themes, reduced motion respected, no horizontal scrolling on phones.
-- **Honest labels:** the data behind all projects is synthetic or from practice sites, and the page says so. Projects 4 and 5 say they were built with guidance from an AI mentor.
+- **Honest labels:** the data behind all projects is synthetic or from practice sites, and the page says so. Projects 4, 5 and 6 say they were built with guidance from an AI mentor.
 
 ## Run it locally
 
