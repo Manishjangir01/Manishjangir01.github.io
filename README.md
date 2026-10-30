@@ -3,6 +3,8 @@
 [![site checks](https://github.com/Manishjangir01/Manishjangir01.github.io/actions/workflows/check.yml/badge.svg)](https://github.com/Manishjangir01/Manishjangir01.github.io/actions/workflows/check.yml)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
+![Manish Jangir portfolio website](docs/social-preview.png)
+
 The source of my portfolio site: six data projects, all my GitHub repositories, skills, resume and contact details on one page. Plain HTML, CSS and a little JavaScript. No build step, no framework, no tracking.
 
 Live site: https://manishjangir01.github.io
